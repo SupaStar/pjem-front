@@ -1,0 +1,77 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a
+          class="nav-link active"
+          aria-current="page"
+          [routerLink]="['/inicio']"
+          >Inicio</a
+        >
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title">Solicitud #{{ solicitud.id_solicitud }}</h4>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label> Nombre solicitante </label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Nombre solicitante"
+                value="{{ solicitud.nombre_Solicitante }}"
+                disabled
+              />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label> Apellido paterno solicitante </label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Apellido paterno solicitante"
+                value="{{ solicitud.paterno_Solicitante }}"
+                disabled
+              />
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label> Apellido materno solicitante </label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Apellido materno solicitante"
+                value="{{ solicitud.materno_Solicitante }}"
+                disabled
+              />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label> Fecha solicitud </label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Fecha solicitud"
+                value="{{ solicitud.fecha_Solicitud }}"
+                disabled
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

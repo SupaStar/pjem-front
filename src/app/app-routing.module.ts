@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ConfiguracionCargaFormularioComponent } from './configuracion-carga-formulario/configuracion-carga-formulario.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { LoginComponent } from './login/login.component';
+import { VerSolicitudComponent } from './ver-solicitud/ver-solicitud.component';
 
 const routes: Routes = [
   {
@@ -12,7 +13,11 @@ const routes: Routes = [
   {
     path: 'inicio',
     component: InicioComponent,
-  }
+  },
+  {
+    path: 'ver-solicitud/:id',
+    component: VerSolicitudComponent,
+  },
 ];
 
 @NgModule({

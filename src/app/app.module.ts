@@ -10,13 +10,16 @@ import { LoginComponent } from './login/login.component';
 import { ConfiguracionCargaFormularioComponent } from './configuracion-carga-formulario/configuracion-carga-formulario.component';
 import { CrearSolicitudComponent } from './crear-solicitud/crear-solicitud.component';
 import { VerSolicitudesComponent } from './ver-solicitudes/ver-solicitudes.component';
+import { DataTablesModule } from 'angular-datatables';
+import { VerSolicitudComponent } from './ver-solicitud/ver-solicitud.component';
 @NgModule({
-  declarations: [AppComponent, InicioComponent, LoginComponent, ConfiguracionCargaFormularioComponent, CrearSolicitudComponent, VerSolicitudesComponent],
+  declarations: [AppComponent, InicioComponent, LoginComponent, ConfiguracionCargaFormularioComponent, CrearSolicitudComponent, VerSolicitudesComponent, VerSolicitudComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    DataTablesModule
   ],
   providers: [],
   bootstrap: [AppComponent],

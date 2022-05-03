@@ -1,1 +1,60 @@
-<p>crear-solicitud works!</p>
+<div class="row">
+  <div class="col-lg-8 formulario">
+    <div class="alert alert-danger" role="alert" *ngIf="errores.length > 0">
+      {{ errores }}
+    </div>
+    <form [formGroup]="formulario" (ngSubmit)="enviar()">
+      <div class="mb-3">
+        <label for="id_Usuario_Asignado" class="form-label"
+          >Usuario asignado</label
+        >
+        <select
+          class="form-control"
+          id="id_Usuario_Asignado"
+          formControlName="id_Usuario_Asignado"
+        >
+          <option value="">Seleccione un usuario</option>
+          <option *ngFor="let usuario of asesores" [value]="usuario.id_usuario">
+            {{ usuario.nombre }}
+          </option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="nombre_Solicitante" class="form-label"
+          >Nombre Solicitante</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          formControlName="nombre_Solicitante"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="paterno_Solicitante" class="form-label"
+          >Apellido Paterno Solicitante</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          formControlName="paterno_Solicitante"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="materno_Solicitante" class="form-label"
+          >Apellido Materno Solicitante</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          formControlName="materno_Solicitante"
+          required
+        />
+      </div>
+      <button type="button" class="btn btn-primary" (click)="enviar()">
+        Enviar
+      </button>
+    </form>
+  </div>
+</div>

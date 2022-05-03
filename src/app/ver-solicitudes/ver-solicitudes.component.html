@@ -1,1 +1,45 @@
-<p>ver-solicitudes works!</p>
+<table class="row-border hover table">
+  <thead>
+    <tr>
+      <td>Id</td>
+      <td>Usuario</td>
+      <td>Nombre solicitante</td>
+      <td>Apellido paterno solicitante</td>
+      <td>Apellido materno solicitante</td>
+      <td>Fecha solicitud</td>
+      <td>Acciones</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let solicitud of solicitudes">
+      <td>{{ solicitud.id_solicitud }}</td>
+      <td>
+        {{
+          solicitud.usuario.nombre +
+            solicitud.usuario.paterno +
+            solicitud.usuario.materno
+        }}
+      </td>
+      <td>{{ solicitud.nombre_Solicitante }}</td>
+      <td>{{ solicitud.paterno_Solicitante }}</td>
+      <td>{{ solicitud.materno_Solicitante }}</td>
+      <td>{{ solicitud.fecha_Solicitud }}</td>
+      <td>
+        <button
+          class="btn btn-danger"
+          type="button"
+          (click)="eliminar(solicitud.id_solicitud)"
+        >
+          Cancelar
+        </button>
+        <button
+          class="btn btn-info"
+          type="button"
+          (click)="ver(solicitud.id_solicitud)"
+        >
+          Ver
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
