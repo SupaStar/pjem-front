@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="col-lg-8 formulario">
+    <div class="alert alert-danger" role="alert" *ngIf="errores.length > 0">
+      {{ errores }}
+    </div>
+    <form [formGroup]="formulario" (ngSubmit)="enviar()">
+      <div class="mb-3">
+        <label for="proporcion" class="form-label">Proporción</label>
+        <input
+          type="number"
+          class="form-control"
+          formControlName="proporcion"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="diferencia" class="form-label">Diferencia</label>
+        <input
+          type="number"
+          class="form-control"
+          formControlName="diferencia"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="anio" class="form-label">Año</label>
+        <input
+          type="number"
+          min="1900"
+          max="2099"
+          step="1"
+          class="form-control"
+          formControlName="anio"
+          required
+        />
+      </div>
+      <button type="button" class="btn btn-primary" (click)="enviar()">
+        Enviar
+      </button>
+    </form>
+  </div>
+</div>
